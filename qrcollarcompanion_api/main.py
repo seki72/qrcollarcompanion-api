@@ -42,3 +42,8 @@ app.add_url_rule(
 app.add_url_rule(
     "/api/v1/pets/<uuid>/notify", view_func=NotificationResource.as_view("notify")
 )
+
+# Test endpoint
+@app.route("/")
+def welcome():
+    return "Welcome to QRCollarCompanion!"
