@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask
+from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
 
@@ -29,6 +30,7 @@ app.config.from_mapping(
 db.init_app(app)
 Migrate(app, db)
 JWTManager(app)
+CORS(app)
 
 app.add_url_rule("/api/v1/login", view_func=SignInEndpoint.as_view("login"))
 app.add_url_rule("/api/v1/register", view_func=RegisterEndpoint.as_view("register"))
