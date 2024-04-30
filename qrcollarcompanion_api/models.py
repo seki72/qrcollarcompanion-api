@@ -30,6 +30,9 @@ class PetModel(BaseModel):
     name: orm.Mapped[str] = orm.mapped_column(sa.String(50))
     age: orm.Mapped[int]
     owner_id: orm.Mapped[str] = orm.mapped_column(sa.Text, sa.ForeignKey("users.uuid"))
+    notifications = orm.relationship(
+        "NotificationModel", backref="pet", cascade="all,delete", lazy="dynamic",
+    )
 
 
 class UserModel(BaseModel):
@@ -46,10 +49,10 @@ class UserModel(BaseModel):
     age: orm.Mapped[int] = orm.mapped_column(sa.Integer)
 
     pets = orm.relationship(
-        "PetModel", backref="owner", cascade="all, delete", lazy="dynamic"
+        "PetModel", backref="owner", cascade="all,delete", lazy="dynamic"
     )
     notifications = orm.relationship(
-        "NotificationModel", backref="dynamic", cascade="all, delete", lazy="dynamic"
+        "NotificationModel", backref="user", cascade="all,delete", lazy="dynamic"
     )
 
 
@@ -65,4 +68,3 @@ class NotificationModel(BaseModel):
     )
     latitude: orm.Mapped[float]
     longitude: orm.Mapped[float]
-    pet = orm.relationship("PetModel")

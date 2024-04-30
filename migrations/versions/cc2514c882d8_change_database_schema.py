@@ -1,8 +1,8 @@
-"""create application tables
+"""change database schema
 
-Revision ID: f91b3c0734ff
+Revision ID: cc2514c882d8
 Revises: 
-Create Date: 2024-04-29 01:42:38.337580
+Create Date: 2024-04-30 19:07:18.980559
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f91b3c0734ff'
+revision = 'cc2514c882d8'
 down_revision = None
 branch_labels = None
 depends_on = None
