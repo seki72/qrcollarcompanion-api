@@ -27,6 +27,7 @@ class NotificationSchema(Schema):
     created_at = fields.Str()
     latitude = fields.Float()
     longitude = fields.Float()
+    message = fields.Str()
 
 
 class CreateNotificationSchema(Schema):

@@ -48,6 +48,7 @@ class NotificationResource(MethodView):
                 user_id=pet.owner_id,
                 latitude=data["latitude"],
                 longitude=data["longitude"],
+                message=data["message"],
             )
 
             return "", 204

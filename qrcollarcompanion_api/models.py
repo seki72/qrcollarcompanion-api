@@ -68,3 +68,4 @@ class NotificationModel(BaseModel):
     )
     latitude: orm.Mapped[float]
     longitude: orm.Mapped[float]
+    message = sa.Column(sa.String(255))
