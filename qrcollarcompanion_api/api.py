@@ -50,7 +50,6 @@ class NotificationResource(MethodView):
                 longitude=data["longitude"],
                 message=data["message"],
             )
-
             return "", 204
         except ValidationError as err:
             return jsonify({"errors": err.messages}), 400

@@ -34,6 +34,7 @@ class CreateNotificationSchema(Schema):
     pet_id = fields.Int()
     latitude = fields.Float()
     longitude = fields.Float()
+    message = fields.Str()
 
 
 class RegisterUserSchema(Schema):
